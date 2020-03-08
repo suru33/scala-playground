@@ -24,7 +24,8 @@ object CallByNameCallByValue extends App {
 
         def callByName(time: => Long) = {}
         Two different values for same variable in same function
-        The param with operator `=>` gets evaluated every time when it called
+        The param `time` with operator `=>` is not a value it's an expression
+        it gets evaluated every time when it called
 
         ByName 1 Time is: 6111220651058
         ByName 2 Time is: 6111220718447
