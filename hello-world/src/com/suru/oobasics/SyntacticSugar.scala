@@ -1,5 +1,10 @@
 package com.suru.oobasics
 
+// added this import to suppress postfixOps error
+
+import scala.language.postfixOps
+
+
 object SyntacticSugar extends App {
 
     class Person(val name: String, place: String, movie: String = null) {
@@ -13,6 +18,20 @@ object SyntacticSugar extends App {
         val y = !true
 
         def unary_- = s"Negative $name"
+
+        def unary_~ = s"Boom $name"
+
+        def unary_+ = s"Positive $name"
+
+        def unary_! = s"Bang $name"
+
+        // postfix
+        def +++ = s"Triple Bonus for $name"
+
+        def apply() = s"Damn apply $name"
+
+        def apply(joke: String) = s"Damn joke: $joke,  $name"
+
     }
 
     val john = new Person("John", "Tallinn", "Terminator")
@@ -35,8 +54,18 @@ object SyntacticSugar extends App {
     println(a)
 
     // Prefix
-
+    // only works with + - ! ~
     println(john.name)
     println(-john)
+    println(~john)
+    println(+john)
+    println(!john)
+    // Postfix
+    println(john +++)
+
+    // calls apply method in class definition
+    // class_object()
+    println(john())
+    println(john("Bad JOKE"))
 
 }
