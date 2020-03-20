@@ -5,7 +5,7 @@ import scala.language.postfixOps
 object SyntacticSugarEx extends App {
 
     class Person(name: String, age: Int, movie: String = "") {
-        def +(nickName: String): Person = new Person(name + " (" + nickName + ")", age, movie)
+        def +(nickName: String): Person = new Person(s"$name ($nickName)", age, movie)
 
         def unary_+(): Person = new Person(name, age + 1, movie)
 
