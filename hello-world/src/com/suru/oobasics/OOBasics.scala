@@ -9,6 +9,7 @@ object OOBasics extends App {
     println(novel)
 
     println(novel.isWrittenBy(author))
+    println(novel isWrittenBy author)
 
     // ICounter Usage
     // we have default value = 0 in constructor
@@ -41,7 +42,7 @@ class Writer(firstName: String, lastName: String, val dobYear: Int) {
 class Novel(name: String, yearOfRelease: Int, author: Writer) {
     def authorAge: Int = yearOfRelease - author.dobYear
 
-    def isWrittenBy(author: Writer) = author == this.author
+    def isWrittenBy(author: Writer): Boolean = author == this.author
 
     def copy(yearOfRelease: Int) = new Novel(name, yearOfRelease, author)
 
@@ -52,24 +53,24 @@ class Novel(name: String, yearOfRelease: Int, author: Writer) {
 // the general implementation
 // private var -> private access and can be modified
 class Counter(private var counterValue: Int) {
-    def current() = counterValue
+    def current: Int = counterValue
 
-    def increment() = {
+    def increment: Int = {
         counterValue += 1
         counterValue
     }
 
-    def decrement() = {
+    def decrement: Int = {
         counterValue -= 1
         counterValue
     }
 
-    def increment(increment: Int) = {
+    def increment(increment: Int): Int = {
         counterValue += increment
         counterValue
     }
 
-    def decrement(decrement: Int) = {
+    def decrement(decrement: Int): Int = {
         counterValue -= decrement
         counterValue
     }
@@ -96,5 +97,5 @@ class ICounter(val count: Int = 0) {
     }
 
     // side effect method
-    def print = println(count)
+    def print: Unit = println(count)
 }
