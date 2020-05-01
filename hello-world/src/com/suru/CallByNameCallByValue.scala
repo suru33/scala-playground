@@ -6,7 +6,7 @@ object CallByNameCallByValue extends App {
         println("ByValue 2 Time is: " + time)
     }
 
-    def callByName(time: => Long) = {
+    def callByName(time: => Long): Unit = {
         println("ByName 1 Time is: " + time)
         println("ByName 2 Time is: " + time)
     }
