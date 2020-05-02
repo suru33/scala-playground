@@ -1,5 +1,13 @@
 package com.suru.oobasics.inheritance
 
+/*
+Variance problem
+If B extends A, should List[B] extends List[A]
+1. Yes (covariant)          trait List[+A]  All sub classes can be used
+2. No (Invariant)           trait List[A]   Strict types
+3. No No (Contravariant)    trait List[-A]  All super call can be used
+ */
+
 abstract class MyGenericList[+A] {
     def head: A
 
