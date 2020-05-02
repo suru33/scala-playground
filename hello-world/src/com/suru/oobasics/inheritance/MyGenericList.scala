@@ -1,11 +1,23 @@
 package com.suru.oobasics.inheritance
 
 /*
-Variance problem
+
+Variance Problem:
+----------------------------------
 If B extends A, should List[B] extends List[A]
 1. Yes (covariant)          trait List[+A]  All sub classes can be used
-2. No (Invariant)           trait List[A]   Strict types
-3. No No (Contravariant)    trait List[-A]  All super call can be used
+2. No (Invariant)           trait List[A]   Strict types usage
+3. No No (Contravariant)    trait List[-A]  All super classes can be used
+
+Bounded Types:
+----------------------------------
+class Shape
+class Circle extends Shape
+class Triangle extends Shape
+
+class Test[T <: Shape]  -   `T` must be Shape or sub type of Shape (Shape, Circle, Triangle)
+class Test[T >: Circle] -   `T` must be Circle or super type of Circle (Circle, Shape) No for Triangle
+
  */
 
 abstract class MyGenericList[+A] {
