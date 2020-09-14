@@ -1,5 +1,3 @@
-package control_structures
-
 object Functions extends App {
     def abs(v: Double) = if (v >= 0) v else -v
 
