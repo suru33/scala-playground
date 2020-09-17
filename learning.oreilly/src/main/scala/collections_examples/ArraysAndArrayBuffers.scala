@@ -1,10 +1,12 @@
-object Collections extends App {
+package collections_examples
+
+object ArraysAndArrayBuffers extends App {
     // until function
     for (i <- 0 until 5) println(i) // 0 1 2 3 4
     // 0 to 5 -> 0, 1, 2, 3, 4, 5
     // 0 until 5 -> 0, 1, 2, 3, 4 ** mostly used to traverse arrays
 
-    val nums = new Array[Int](10) // init the array of size 10 and it is immutable
+    val nums = new Array[Int](10) // init the array of size 10 and it is immutable with default value `0`
     // generics in scala use [] to access elements use ()
     nums(3) = 89
     println(nums(3)) // 89
