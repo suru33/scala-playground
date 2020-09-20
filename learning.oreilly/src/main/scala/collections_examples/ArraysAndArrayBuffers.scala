@@ -1,5 +1,7 @@
 package collections_examples
 
+import scala.collection.mutable.ArrayBuffer
+
 object ArraysAndArrayBuffers extends App {
     // until function
     for (i <- 0 until 5) println(i) // 0 1 2 3 4
@@ -22,4 +24,8 @@ object ArraysAndArrayBuffers extends App {
     val x = Array((1, 'a'), (2, 'b'), (3, 'c'))
     for ((ix, ch) <- x) println(ix, ch)
 
+    val newStrings = ArrayBuffer("He", "LLO")
+    println(newStrings)
+    newStrings ++= strings
+    println(newStrings)
 }
